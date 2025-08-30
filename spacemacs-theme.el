@@ -327,9 +327,9 @@ to `auto', tags may not be properly aligned. "
      `(diff-removed           ((,class :background unspecified :foreground ,red :extend t)))
 
 ;;;;; diff-hl
-     `(diff-hl-insert ((,class :background ,green :foreground ,green)))
-     `(diff-hl-delete ((,class :background ,red :foreground ,red)))
-     `(diff-hl-change ((,class :background ,blue :foreground ,blue)))
+     `(diff-hl-insert ((,class :background ,green-bg-s :foreground ,green)))
+     `(diff-hl-delete ((,class :background ,red-bg-s :foreground ,red)))
+     `(diff-hl-change ((,class :background ,blue-bg-s :foreground ,blue)))
 
 ;;;;; dired
      `(dired-directory ((,class (:foreground ,keyword :background ,bg1 :inherit bold))))

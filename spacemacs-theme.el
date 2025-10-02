@@ -166,7 +166,16 @@ to `auto', tags may not be properly aligned. "
          (blue-bg-s     (funcall get-color 'blue-bg-s (funcall pick-color     "#2d4252" "#262626" "#d1dcdf" "#d7d7ff")))
          (magenta       (funcall get-color 'magenta (funcall pick-color       "#a31db1" "#af00df" "#a31db1" "#800080")))
          (yellow        (funcall get-color 'yellow (funcall pick-color        "#b1951d" "#875f00" "#b1951d" "#875f00")))
-         (yellow-bg     (funcall get-color 'yellow-bg (funcall pick-color     "#32322c" "#262626" "#f6f1e1" "#ffffff"))))
+         (yellow-bg     (funcall get-color 'yellow-bg (funcall pick-color     "#32322c" "#262626" "#f6f1e1" "#ffffff")))
+         (vterm-black   (funcall get-color 'vterm-black (funcall pick-color   "#292b2e" "#262626" "#d2ceda" "#bcbcbc")))
+         (br-black      (funcall get-color 'br-black (funcall pick-color      "#50545a" "#50545a" "#a59db5" "#a59db5")))
+         (br-red        (funcall get-color 'br-red (funcall pick-color        "#f44f4b" "#f44f4b" "#f44f4b" "#f44f4b")))
+         (br-green      (funcall get-color 'br-green (funcall pick-color      "#85dc2e" "#85dc2e" "#85dc2e" "#85dc2e")))
+         (br-yellow     (funcall get-color 'br-yellow (funcall pick-color     "#dcbb2e" "#dcbb2e" "#dcbb2e" "#dcbb2e")))
+         (br-blue       (funcall get-color 'br-blue (funcall pick-color       "#72abdf" "#72abdf" "#609acf" "#609acf")))
+         (br-magenta    (funcall get-color 'br-magenta (funcall pick-color    "#cc2edc" "#cc2edc" "#cc2edc" "#cc2edc")))
+         (br-cyan       (funcall get-color 'br-cyan (funcall pick-color       "#53e4f3" "#53e4f3" "#40d0df" "#40d0df")))
+         (br-white      (funcall get-color 'br-white (funcall pick-color      "#c1c1c1" "#c1c1c1" "#856e93" "#856e93"))))
 
 
 
@@ -230,14 +239,22 @@ to `auto', tags may not be properly aligned. "
      `(ahs-plugin-default-face-unfocused ((,class (:background ,highlight))))
 
 ;;;;; ansi-color
-     `(ansi-color-black ((,class (:background ,bg4 :foreground ,bg4))))
+     `(ansi-color-black ((,class (:background ,vterm-black :foreground ,vterm-black))))
      `(ansi-color-red ((,class (:background ,red :foreground ,red))))
      `(ansi-color-green ((,class (:background ,green :foreground ,green))))
      `(ansi-color-yellow ((,class (:background ,yellow :foreground ,yellow))))
      `(ansi-color-blue ((,class (:background ,blue :foreground ,blue))))
      `(ansi-color-magenta ((,class (:background ,magenta :foreground ,magenta))))
      `(ansi-color-cyan ((,class (:background ,cyan :foreground ,cyan))))
-     `(ansi-color-gray ((,class (:background ,base :foreground ,base))))
+     `(ansi-color-white ((,class (:background ,base :foreground ,base))))
+     `(ansi-color-bright-black ((,class (:foreground ,br-black :background ,br-black))))
+     `(ansi-color-bright-blue ((,class (:foreground ,br-blue :background ,br-blue))))
+     `(ansi-color-bright-cyan ((,class (:foreground ,br-cyan :background ,br-cyan))))
+     `(ansi-color-bright-green ((,class (:foreground ,br-green :background ,br-green))))
+     `(ansi-color-bright-magenta ((,class (:foreground ,br-magenta :background ,br-magenta))))
+     `(ansi-color-bright-red ((,class (:foreground ,br-red :background ,br-red))))
+     `(ansi-color-bright-white ((,class (:foreground ,br-white :background ,br-white))))
+     `(ansi-color-bright-yellow ((,class (:foreground ,br-yellow :background ,br-yellow))))
 
 ;;;;; anzu-mode
      `(anzu-mode-line ((,class (:foreground ,yellow :inherit bold))))
@@ -983,7 +1000,7 @@ to `auto', tags may not be properly aligned. "
 
 ;;;;; term
      `(term ((,class (:foreground ,base :background ,bg1))))
-     `(term-color-black ((,class (:foreground ,bg4 :background ,bg4))))
+     `(term-color-black ((,class (:foreground ,vterm-black :background ,vterm-black))))
      `(term-color-blue ((,class (:foreground ,keyword :background ,keyword))))
      `(term-color-cyan ((,class (:foreground ,cyan :background ,cyan))))
      `(term-color-green ((,class (:foreground ,green :background ,green))))
@@ -991,13 +1008,21 @@ to `auto', tags may not be properly aligned. "
      `(term-color-red ((,class (:foreground ,red :background ,red))))
      `(term-color-white ((,class (:foreground ,base :background ,base))))
      `(term-color-yellow ((,class (:foreground ,yellow :background ,yellow))))
+     `(term-color-bright-black ((,class (:foreground ,br-black :background ,br-black))))
+     `(term-color-bright-blue ((,class (:foreground ,br-blue :background ,br-blue))))
+     `(term-color-bright-cyan ((,class (:foreground ,br-cyan :background ,br-cyan))))
+     `(term-color-bright-green ((,class (:foreground ,br-green :background ,br-green))))
+     `(term-color-bright-magenta ((,class (:foreground ,br-magenta :background ,br-magenta))))
+     `(term-color-bright-red ((,class (:foreground ,br-red :background ,br-red))))
+     `(term-color-bright-white ((,class (:foreground ,br-white :background ,br-white))))
+     `(term-color-bright-yellow ((,class (:foreground ,br-yellow :background ,br-yellow))))
 
 ;;;;; vterm
      `(vterm-color-default ((,class (:foreground ,base :background ,bg1))))
      ;; vterm-color-black used to render black color code.
      ;; The foreground color is used as ANSI color 0 and the background
      ;; color is used as ANSI color 8.
-     `(vterm-color-black ((,class (:foreground ,bg4 :background ,bg4))))
+     `(vterm-color-black ((,class (:foreground ,vterm-black :background ,vterm-black))))
      `(vterm-color-blue ((,class (:foreground ,blue :background ,blue))))
      `(vterm-color-cyan ((,class (:foreground ,cyan :background ,cyan))))
      `(vterm-color-green ((,class (:foreground ,green :background ,green))))
@@ -1005,6 +1030,14 @@ to `auto', tags may not be properly aligned. "
      `(vterm-color-red ((,class (:foreground ,red  :background ,red))))
      `(vterm-color-white ((,class (:foreground ,base  :background ,base))))
      `(vterm-color-yellow ((,class (:foreground ,yellow   :background ,yellow))))
+     `(vterm-color-bright-black ((,class (:foreground ,br-black :background ,br-black))))
+     `(vterm-color-bright-blue ((,class (:foreground ,br-blue :background ,br-blue))))
+     `(vterm-color-bright-cyan ((,class (:foreground ,br-cyan :background ,br-cyan))))
+     `(vterm-color-bright-green ((,class (:foreground ,br-green :background ,br-green))))
+     `(vterm-color-bright-magenta ((,class (:foreground ,br-magenta :background ,br-magenta))))
+     `(vterm-color-bright-red ((,class (:foreground ,br-red :background ,br-red))))
+     `(vterm-color-bright-white ((,class (:foreground ,br-white :background ,br-white))))
+     `(vterm-color-bright-yellow ((,class (:foreground ,br-yellow :background ,br-yellow))))
 
 ;;;;; tide
      `(tide-hl-identifier-face ((,class (:foreground ,yellow :background ,yellow-bg))))
